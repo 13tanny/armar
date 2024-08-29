@@ -1,0 +1,66 @@
+input,
+textarea {
+	width: 100%;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	color: $global-black;
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid $glodal-grey-light;
+	appearance: none;
+	outline: none;
+
+	&::placeholder {
+		color: $global-grey-dark;
+		opacity: 0;
+		transition: .2s;
+	}
+
+	&:not([type=checkbox]):not([type=radio]):not([type=file]) {
+
+		&:focus,
+		&:not(:placeholder-shown) {
+			border-color: $global-blue;
+
+			+label {
+				top: -6px;
+				left: 6px;
+				font-size: 12px;
+				color: $global-blue;
+			}
+		}
+
+		&:focus,
+		&:hover {
+			border-color: $global-blue;
+
+			//&::placeholder {
+			//	opacity: 1;
+			//}
+		}
+
+		+label {
+			position: absolute;
+			top: 12px;
+			left: 16px;
+			display: block;
+			font-size: 16px;
+			line-height: 24px;
+			color: $global-grey-dark;
+			pointer-events: none;
+			transition: .2s;
+		}
+	}
+}
+
+input {
+	height: 56px;
+}
+
+textarea {
+	resize: vertical;
+	margin-top: 12px;
+}

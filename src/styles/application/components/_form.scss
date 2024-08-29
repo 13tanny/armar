@@ -1,0 +1,45 @@
+.form {
+	&__row {
+		position: relative;
+
+		+.form {
+			&__row {
+				margin-top: 20px;
+			}
+		}
+
+		&_type {
+			&_flex {
+				display: flex;
+				flex-direction: column;
+
+				.form__row+.form__row {
+					@media (min-width: 1024px) {
+						margin-top: 0;
+					}
+				}
+
+				.form__row {
+					width: 100%;
+				}
+
+				@media (min-width: 1024px) {
+					flex-direction: row;
+					gap: 20px;
+				}
+			}
+
+			&_flex-end {
+				display: flex;
+				justify-content: flex-end;
+			}
+		}
+	}
+
+	&__note {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 18px;
+		color: $color-text;
+	}
+}
